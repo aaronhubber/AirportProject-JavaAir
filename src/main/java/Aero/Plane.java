@@ -1,3 +1,5 @@
+package Aero;
+
 public class Plane {
 
     private TypeOfPlane typeOfPlane;

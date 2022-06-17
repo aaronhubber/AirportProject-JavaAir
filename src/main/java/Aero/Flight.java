@@ -1,3 +1,9 @@
+package Aero;
+
+import Personel.CabinCrewMember;
+import Personel.Passenger;
+import Personel.Pilot;
+
 import java.util.ArrayList;
 
 public class Flight {
@@ -24,11 +30,18 @@ public class Flight {
 
 
     public void addPassengerToFlight(Passenger passenger) {
-        this.passengerList.add(passenger);
+        if (passengerList.size() < plane.getTypeOfPlane().getCapacity()) {
+            this.passengerList.add(passenger);
+        }
+
     }
 
     public int getNumberOfPassengers() {
         return this.passengerList.size();
+    }
+
+    public String getFlightNumber() {
+        return this.flightNumber;
     }
 
     public int getRemainingSeats(Plane plane) {

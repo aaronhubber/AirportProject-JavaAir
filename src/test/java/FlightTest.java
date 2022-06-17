@@ -1,3 +1,7 @@
+import Aero.Flight;
+import Aero.Plane;
+import Aero.TypeOfPlane;
+import Personel.Passenger;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,8 +24,8 @@ public class FlightTest {
                 "20.30");
         flight2 = new Flight(plane2, "BO111", "SHA", "GLA",
                 "14.10");
-        passenger1 = new Passenger("Greg", 2);
-        passenger2 = new Passenger("Sophie", 9);
+        passenger1 = new Passenger("Greg", 2, flight);
+        passenger2 = new Passenger("Sophie", 9, flight);
     }
     @Test
     public void getNumberOfPassengersOnFight(){

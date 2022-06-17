@@ -1,3 +1,5 @@
+package Personel;
+
 public enum Rank {
 
     CAPTAIN,

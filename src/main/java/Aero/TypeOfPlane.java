@@ -1,3 +1,5 @@
+package Aero;
+
 public enum TypeOfPlane {
 
     BOEING_747(100, 1000),

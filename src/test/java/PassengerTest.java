@@ -1,6 +1,9 @@
-import org.junit.After;
+import Aero.Flight;
+import Aero.Plane;
+import Personel.Passenger;
 import org.junit.Before;
 import org.junit.Test;
+
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,12 +12,15 @@ public class PassengerTest {
     Passenger passenger1;
     Passenger passenger2;
     Passenger passenger3;
+    Flight flight;
+    Plane plane;
 
     @Before
     public void before(){
-        passenger1 = new Passenger("Barry", 1);
-        passenger2 = new Passenger("Fisher", 3);
-        passenger3 = new Passenger("Gwen", 5);
+        flight = new Flight(plane, "CF23", "LDN", "INV", "1900");
+        passenger1 = new Passenger("Barry", 1, flight );
+        passenger2 = new Passenger("Fisher", 3, flight);
+        passenger3 = new Passenger("Gwen", 5, flight);
     }
     @Test
     public void hasName(){
@@ -35,5 +41,9 @@ public class PassengerTest {
     public void canChangeNumberOfBags() {
         passenger1.setNumberOfBags(2);
         assertEquals(2, passenger1.getNumberOfBags());
+    }
+    @Test
+    public void canCheckFlightInfo(){
+        assertEquals("CF23", passenger1.getFlightInfo());
     }
 }

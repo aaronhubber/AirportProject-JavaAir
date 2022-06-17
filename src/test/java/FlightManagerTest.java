@@ -1,3 +1,8 @@
+import Aero.Flight;
+import Aero.FlightManager;
+import Aero.Plane;
+import Aero.TypeOfPlane;
+import Personel.Passenger;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,7 +21,7 @@ public class FlightManagerTest {
         flight = new Flight(plane, "AB606", "LAX", "EDI",
                 "20.30");
         flightManager = new FlightManager(flight, plane);
-        passenger = new Passenger("Jojo", 2);
+        passenger = new Passenger("Jojo", 2, flight);
     }
     @Test
     public void amountOfBaggageWeightTotal() {

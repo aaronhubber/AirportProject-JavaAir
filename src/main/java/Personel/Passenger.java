@@ -1,11 +1,19 @@
+package Personel;
+
+
+
+import Aero.Flight;
+
 public class Passenger {
 
     private String name;
     private int numberOfBags;
+    private Flight flight;
 
-    public Passenger(String name, int numberOfBags) {
+    public Passenger(String name, int numberOfBags, Flight flight) {
         this.name = name;
         this.numberOfBags = numberOfBags;
+        this.flight = flight;
     }
 
     public String getName() {
@@ -23,4 +31,10 @@ public class Passenger {
     public void setNumberOfBags(int numberOfBags) {
         this.numberOfBags = numberOfBags;
     }
-}
+
+    public String getFlightInfo(){
+
+            return this.flight.getFlightNumber();
+        }
+    }
+

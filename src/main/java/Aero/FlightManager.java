@@ -1,3 +1,5 @@
+package Aero;
+
 public class FlightManager {
 
     Flight flight;
