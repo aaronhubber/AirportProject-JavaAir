@@ -26,18 +26,43 @@ public class Flight {
         this.destinationAirport = destinationAirport;
         this.departureAirport = departureAirport;
         this.timeOfDeparture = timeOfDeparture;
-    }
-
-
-    public void addPassengerToFlight(Passenger passenger) {
-        if (passengerList.size() < plane.getTypeOfPlane().getCapacity()) {
-            this.passengerList.add(passenger);
-        }
 
     }
 
     public int getNumberOfPassengers() {
         return this.passengerList.size();
+    }
+
+    public int getNumberOfSeats(){
+        return this.plane.getNumberOfSeats();
+    }
+
+    public ArrayList<Pilot> getPilots() {
+        return pilots;
+    }
+
+    public ArrayList<CabinCrewMember> getCrew() {
+        return crew;
+    }
+
+    public ArrayList<Passenger> getPassengerList() {
+        return passengerList;
+    }
+
+    public Plane getPlane() {
+        return plane;
+    }
+
+    public String getDestinationAirport() {
+        return destinationAirport;
+    }
+
+    public String getDepartureAirport() {
+        return departureAirport;
+    }
+
+    public String getTimeOfDeparture() {
+        return timeOfDeparture;
     }
 
     public String getFlightNumber() {
@@ -51,7 +76,15 @@ public class Flight {
         else{
             return 000;
         }
-    }}
+    }
+    public void addPassengerToFlight(Passenger passenger, Flight flight){
+        if (passengerList.size() < plane.getTypeOfPlane().getCapacity()){
+            passengerList.add(passenger);
+            passenger.setFlight(flight);
+            passenger.setSeatNumber();
+        }
+    }
+}
 
 
 

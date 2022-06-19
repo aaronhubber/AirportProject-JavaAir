@@ -29,23 +29,24 @@ public class FlightTest {
     }
     @Test
     public void getNumberOfPassengersOnFight(){
-        flight.addPassengerToFlight(passenger1);
+        flight.addPassengerToFlight(passenger1,flight);
         assertEquals(1, flight.getNumberOfPassengers());
     }
     @Test
     public void getNumberOfRemainingSeats(){
-        flight.addPassengerToFlight(passenger1);
-        flight.addPassengerToFlight(passenger1);
-        flight.addPassengerToFlight(passenger1);
-        flight.addPassengerToFlight(passenger1);
+        flight.addPassengerToFlight(passenger1, flight2);
+        flight.addPassengerToFlight(passenger1, flight2);
+        flight.addPassengerToFlight(passenger1, flight2);
+        flight.addPassengerToFlight(passenger1, flight2);
         assertEquals(96, flight.getRemainingSeats(plane2));
     }
     @Test
     public void getNumberOfRemainingSeatsIfNoCapacity(){
         Plane plane = new Plane(TypeOfPlane.CESSNA);
-        flight.addPassengerToFlight(passenger1);
-        flight.addPassengerToFlight(passenger1);
-        flight.addPassengerToFlight(passenger1);
+        Flight flight = new Flight(plane, "TT454", "TKO", "EDI", "1200");
+        flight.addPassengerToFlight(passenger1, flight);
+        flight.addPassengerToFlight(passenger1, flight);
+        flight.addPassengerToFlight(passenger1, flight);
         assertEquals(000, flight.getRemainingSeats(plane));
     }
 }

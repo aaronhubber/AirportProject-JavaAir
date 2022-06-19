@@ -15,4 +15,7 @@ public class Plane {
     public void setTypeOfPlane(TypeOfPlane typeOfPlane) {
         this.typeOfPlane = typeOfPlane;
     }
+    public int getNumberOfSeats(){
+        return this.typeOfPlane.capacity;
+    }
 }

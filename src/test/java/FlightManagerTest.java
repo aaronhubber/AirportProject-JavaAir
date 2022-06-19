@@ -34,13 +34,13 @@ public class FlightManagerTest {
     }
     @Test
     public void findRemainingAMountOfBaggageAllowanceRemainingOnFlight(){
-        flight.addPassengerToFlight(passenger);
+        flight.addPassengerToFlight(passenger, flight);
         assertEquals(25, flightManager.getRemainingLuggageCapacity());
     }
     @Test
     public void findRemainingAMountOfBaggageAllowanceRemainingOnFlightIfNoneRemains(){
-        flight.addPassengerToFlight(passenger);
-        flight.addPassengerToFlight(passenger);
+        flight.addPassengerToFlight(passenger, flight);
+        flight.addPassengerToFlight(passenger, flight);
         assertEquals(0, flightManager.getRemainingLuggageCapacity());
     }
 

@@ -44,6 +44,13 @@ public class PassengerTest {
     }
     @Test
     public void canCheckFlightInfo(){
-        assertEquals("CF23", passenger1.getFlightInfo());
+        assertEquals(flight, passenger1.getFlight());
     }
+    @Test
+    public void checkSeatNumber(){
+        flight.addPassengerToFlight(passenger1, flight);
+        assertEquals(1, passenger1.getSeatNumber());
+    }
+
+
 }
